@@ -1,12 +1,17 @@
 import { ThemeProvider } from "styled-components"
 import { defaultTheme } from "./styles/themes/defaultTheme"
 import { GlobalStyle } from "./styles/global"
+import { Form } from "./components/Form"
+import { LayoutContainer } from "./layout/DefaultLayout/styles"
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <h1>Hello World</h1>
+      <LayoutContainer>
+        <h1>Github Profile</h1>
+        <Form />
+      </LayoutContainer>
     </ThemeProvider>
   )
 }

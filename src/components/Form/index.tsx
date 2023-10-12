@@ -1,4 +1,4 @@
-import { ErrorMessage, FormContainer } from "./style";
+import { ErrorMessage, FormContainer } from "./styles";
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'

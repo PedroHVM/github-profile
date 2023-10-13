@@ -4,16 +4,19 @@ import { GlobalStyle } from "./styles/global"
 import { Form } from "./components/Form"
 import { LayoutContainer } from "./layout/DefaultLayout/styles"
 import { Profile } from "./components/Profile"
+import { UserContextProvider } from "./contexts/User"
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <LayoutContainer>
-        <h1>Github Profile</h1>
-        <Form />
-        <Profile />
-      </LayoutContainer>
+      <UserContextProvider>
+        <LayoutContainer>
+          <h1>Github Profile</h1>
+          <Form />
+          <Profile />
+        </LayoutContainer>
+      </UserContextProvider>
     </ThemeProvider>
   )
 }

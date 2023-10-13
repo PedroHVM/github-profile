@@ -13,8 +13,12 @@ export const ProfileContainer = styled.div`
 
 export const UserAndPicContainer = styled.div`
   text-align: center;
-  width: 25%;
+  width: 10rem;
   display: inline-block;
+`
+
+export const NameAndBioContainer = styled.div`
+  width: 100%;
 `
 
 export const Name = styled.p`

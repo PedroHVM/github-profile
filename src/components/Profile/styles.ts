@@ -5,9 +5,15 @@ export const ProfileContainer = styled.div`
   background: ${(props) => props.theme['base-div-background']};
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 28px 0px;
   width: 50rem;
+  max-width: 100%;
   border-radius: 8px;
   display: flex;
   gap: 2rem;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 export const UserAndPicContainer = styled.div`
@@ -43,6 +49,11 @@ export const UserInfos = styled.div`
   gap: 1rem;
 
   flex-wrap: wrap;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 export const Info = styled.p`
@@ -53,4 +64,8 @@ export const Info = styled.p`
   border: 1px solid ${(props => props.theme["base-border"])};
   border-radius: 8px;
   text-align: center;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `

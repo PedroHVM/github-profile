@@ -7,6 +7,7 @@ export const FormContainer = styled.form`
   background: ${(props) => props.theme['base-div-background']};
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 28px 0px;
   width: 50rem;
+  max-width: 100%;
   gap: 0.5rem;
   border-radius: 8px;
 

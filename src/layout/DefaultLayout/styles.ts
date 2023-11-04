@@ -12,4 +12,8 @@ export const LayoutContainer = styled.div`
   h1 {
     padding: 1rem;
   }
+
+  @media (max-width: 800px) {
+    margin-top: 1rem;
+  }
 `

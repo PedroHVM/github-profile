@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ProfileContainer = styled.div`
-  margin-top: 1rem;
   padding: 1rem;
   background: ${(props) => props.theme['base-div-background']};
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 28px 0px;

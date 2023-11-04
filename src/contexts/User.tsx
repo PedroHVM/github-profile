@@ -14,6 +14,7 @@ interface UserDataType {
 interface UserContextType {
   userData: UserDataType
   handleFetchUser: (username: string) => Promise<void>
+  isLoading: boolean
 }
 
 interface UserContextProviderProps {
@@ -24,17 +25,27 @@ export const UserContext = createContext({} as UserContextType)
 
 export function UserContextProvider({ children }: UserContextProviderProps) {
   const [userData, setUserData] = useState({} as UserDataType)
+  const [isLoading, setIsLoading] = useState(false)
 
   async function handleFetchUser(username: string) {
-    const response = await api.get(`/${username}`)
 
-    setUserData(response.data)
+    try {
+      setIsLoading(true)
+      const response = await api.get(`/${username}`)
+      setUserData(response.data)
+    } catch (err) {
+      console.log(err)
+    } finally {
+      setIsLoading(false)
+    }
+
   }
 
   return (
     <UserContext.Provider value={{
       userData,
-      handleFetchUser
+      handleFetchUser,
+      isLoading
     }}>
       {children}
     </UserContext.Provider>

@@ -1,6 +1,7 @@
 import { styled } from 'styled-components'
 
 export const FormContainer = styled.form`
+  margin-bottom: 1rem;
   display: flex;
   padding: 1rem;
   background: ${(props) => props.theme['base-div-background']};

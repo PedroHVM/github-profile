@@ -18,7 +18,7 @@ type claimUsernameFormData = z.infer<typeof claimUsernameFormSchema>
 export function Form() {
   const { handleFetchUser } = useContext(UserContext)
 
-  const { register, handleSubmit, formState: { errors } } = useForm<claimUsernameFormData>({
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<claimUsernameFormData>({
     resolver: zodResolver(claimUsernameFormSchema)
   })
 
@@ -32,7 +32,7 @@ export function Form() {
     <>
       <FormContainer onSubmit={handleSubmit(handleClaimUsername)}>
         <input type="text" placeholder="Nome de usuário" {...register('username')} />
-        <button type="submit">Buscar</button>
+        <button type="submit" disabled={isSubmitting}>Buscar</button>
       </FormContainer>
       <ErrorMessage>
         {errors.username && errors.username.message}

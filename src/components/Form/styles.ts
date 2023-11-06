@@ -33,6 +33,11 @@ export const FormContainer = styled.form`
       background-color: ${(props) => props.theme['blue']};
       color: black;
     }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: #dedede;
+    }
   }
 ` 
 

@@ -1,6 +1,15 @@
 import { ReactNode, createContext, useState } from "react";
 import { api } from "../lib/axios";
 
+interface Repo {
+  id: number
+  name: string
+  stargazers_count: number
+  description: string
+  html_url: string
+  language: string
+}
+
 interface UserDataType {
   avatar_url: string
   name: string
@@ -9,6 +18,7 @@ interface UserDataType {
   followers: number
   following: number
   public_repos: number
+  repos: Repo[]
 }
 
 interface UserContextType {
@@ -31,13 +41,16 @@ export function UserContextProvider({ children }: UserContextProviderProps) {
 
     try {
       setIsLoading(true)
-      const response = await api.get(`/${username}`)
-      setUserData(response.data)
+      const userResponse = await api.get(`/${username}`)
+      const reposResponse = await api.get(`/${username}/repos?sort=updated`)
+      setUserData({ ...userResponse.data, repos: reposResponse.data })
     } catch (err) {
       console.log(err)
     } finally {
       setIsLoading(false)
     }
+
+    console.log(userData)
 
   }
 

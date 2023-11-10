@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 900px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
 
   h2 {
     text-align: center;
@@ -65,4 +69,19 @@ export const Stars = styled.div`
   display: flex;
   gap: 4px;
   align-items: baseline;
+`
+
+export const ViewMoreButton = styled.button`
+  padding: 0.5rem 2.5rem;
+  background-color: ${(props) => props.theme["blue"]};
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: fit-content;
+  margin: 1.5rem auto;
+  transition: 100ms;
+
+  &:hover {
+    scale: 1.1;
+  }
 `

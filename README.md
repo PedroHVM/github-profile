@@ -1,27 +1,44 @@
-# React + TypeScript + Vite
+# GitHub Profile
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="./src/assets/github-profile-mockup.png" width="600" ></img>
 
-Currently, two official plugins are available:
+## Descrição
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O GitHub Profile é um projeto que permite aos usuários buscar perfis do GitHub e obter informações detalhadas sobre eles. Utilizando tecnologias como Vite, React Hook Form, Zod, Axios, Styled-components e TypeScript, este projeto oferece uma experiência interativa para explorar perfis do GitHub de maneira eficiente.
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Busca por nome de usuário do GitHub.
+- Exibe informações do perfil do usuário, incluindo nome, biografia, número de seguidores e seguindo, e contagem de repositórios.
+- Apresenta uma seção com os repositórios do usuário.
 
-- Configure the top-level `parserOptions` property like this:
+## Tecnologias Utilizadas
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- Vite
+- React Hook Form
+- Zod
+- Axios
+- Styled-components
+- TypeScript
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Como Usar
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/github-profile.git
+   ```
+
+2. Instale as dependências:
+
+   ```bash
+   cd github-profile
+   npm install
+   ```
+
+3. Execute o projeto:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Acesse o aplicativo no seu navegador em ```http://localhost:5173/```.
